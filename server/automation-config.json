@@ -1,0 +1,6 @@
+{
+  "autoConfirmCod": true,
+  "autoCancelUnpaidHours": 24,
+  "autoCompleteShippingDays": 3,
+  "sendStatusEmails": true
+}
