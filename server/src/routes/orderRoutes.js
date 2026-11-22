@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const orderController = require('../controllers/orderController');
-const { verifyToken, optionalAuth } = require('../middlewares/authMiddleware');
+const { verifyToken } = require('../middlewares/authMiddleware');
 const isAdmin = require('../middlewares/adminMiddleware');
 
 // Public
-router.post('/', optionalAuth, orderController.placeOrder);
 router.get('/track', orderController.trackOrder);
 router.post('/webhook/bank-transfer', orderController.bankTransferWebhook);
 
 // Customer đã đăng nhập
+router.post('/', verifyToken, orderController.placeOrder);
 router.get('/my-orders', verifyToken, orderController.getMyOrders);
 router.patch('/:id/cancel', verifyToken, orderController.cancelOrder);
 router.patch('/:id/confirm-received', verifyToken, orderController.confirmReceived);

@@ -1,9 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import { formatCurrency } from '../components/ProductCard';
 
 const Cart = () => {
     const { cartItems, totalItems, totalAmount, updateQuantity, removeFromCart, clearCart } = useCart();
+    const { isAuthenticated } = useAuth();
+    const navigate = useNavigate();
+
+    const handleProceedToCheckout = () => {
+        if (!isAuthenticated) {
+            navigate('/login', { state: { from: '/checkout' } });
+            return;
+        }
+        navigate('/checkout');
+    };
 
     if (cartItems.length === 0) {
         return (
@@ -101,14 +112,35 @@ const Cart = () => {
                         <span style={{ color: 'var(--success)', fontWeight: 600 }}>Miễn phí</span>
                     </div>
                     <hr style={{ border: 'none', borderTop: '1px solid var(--border)', margin: '14px 0' }} />
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px', fontSize: '18px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px', fontSize: '18px' }}>
                         <strong>Tổng cộng:</strong>
                         <strong style={{ color: 'var(--accent)' }}>{formatCurrency(totalAmount)}</strong>
                     </div>
 
-                    <Link to="/checkout" className="btn btn-accent" style={{ width: '100%', marginBottom: '10px' }}>
-                        Tiến hành đặt hàng
-                    </Link>
+                    {!isAuthenticated && (
+                        <div
+                            style={{
+                                padding: '10px 12px',
+                                marginBottom: '12px',
+                                borderRadius: '6px',
+                                backgroundColor: '#fef3c7',
+                                color: '#92400e',
+                                fontSize: '13px',
+                                lineHeight: 1.4
+                            }}
+                        >
+                            Vui lòng đăng nhập tài khoản để tiến hành đặt hàng và quản lý đơn hàng của bạn.
+                        </div>
+                    )}
+
+                    <button
+                        type="button"
+                        onClick={handleProceedToCheckout}
+                        className="btn btn-accent"
+                        style={{ width: '100%', marginBottom: '10px' }}
+                    >
+                        {isAuthenticated ? 'Tiến hành đặt hàng' : 'Đăng nhập để đặt hàng'}
+                    </button>
                     <Link to="/products" className="btn btn-outline" style={{ width: '100%' }}>
                         Mua thêm sản phẩm khác
                     </Link>

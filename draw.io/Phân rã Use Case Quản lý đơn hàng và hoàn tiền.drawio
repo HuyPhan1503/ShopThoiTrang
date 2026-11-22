@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Trang-1" id="VwOk_QiKNKDD5lrpuJ4n">
+    <mxGraphModel dx="1375" dy="808" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="b" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontFamily=Times New Roman;fontSize=14;fontStyle=1;fillColor=none;strokeColor=#333333;strokeWidth=2;spacingTop=8;" value="Phân rã Use Case &quot;Quản lý đơn hàng và hoàn tiền&quot;" vertex="1">
+          <mxGeometry height="600" width="760" x="180" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="adm" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Times New Roman;fontSize=14;fontStyle=1;strokeWidth=2;" value="Quản trị viên" vertex="1">
+          <mxGeometry height="80" width="40" x="60" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="kh" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Times New Roman;fontSize=14;fontStyle=1;strokeWidth=2;" value="Khách hàng" vertex="1">
+          <mxGeometry height="80" width="40" x="60" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="ad04" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" value="AD04: Quản lý đơn hàng&lt;br&gt;và hoàn tiền" vertex="1">
+          <mxGeometry height="95" width="230" x="370" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ad041" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="AD04.1: Cập nhật trạng thái&lt;br&gt;đơn hàng (7 trạng thái)" vertex="1">
+          <mxGeometry height="80" width="220" x="700" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ad042" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="AD04.2: Bàn giao đơn vị vận&lt;br&gt;chuyển và mã vận đơn" vertex="1">
+          <mxGeometry height="80" width="220" x="700" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ad043" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="AD04.3: Xử lý trả hàng&lt;br&gt;và hoàn tiền" vertex="1">
+          <mxGeometry height="80" width="210" x="220" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="ad044" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="AD04.4: Đối soát chuyển khoản&lt;br&gt;và tự động hóa xử lý" vertex="1">
+          <mxGeometry height="80" width="210" x="470" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="ad045" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="AD04.5: Cập nhật trạng thái&lt;br&gt;đơn hàng hàng loạt" vertex="1">
+          <mxGeometry height="80" width="210" x="715" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="adm" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="ad04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="kh" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="ad043">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i1" edge="1" parent="1" source="ad04" style="endArrow=open;endSize=10;endFill=0;dashed=1;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=3;strokeColor=#333333;labelBackgroundColor=#ffffff;" target="ad041" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i2" edge="1" parent="1" source="ad04" style="endArrow=open;endSize=10;endFill=0;dashed=1;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=3;strokeColor=#333333;labelBackgroundColor=#ffffff;" target="ad042" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x1" edge="1" parent="1" source="ad043" style="endArrow=open;endSize=10;endFill=0;dashed=1;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=3;strokeColor=#333333;labelBackgroundColor=#ffffff;" target="ad04" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x2" edge="1" parent="1" source="ad044" style="endArrow=open;endSize=10;endFill=0;dashed=1;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=3;strokeColor=#333333;labelBackgroundColor=#ffffff;" target="ad04" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x3" edge="1" parent="1" source="ad045" style="endArrow=open;endSize=10;endFill=0;dashed=1;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=3;strokeColor=#333333;labelBackgroundColor=#ffffff;" target="ad04" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

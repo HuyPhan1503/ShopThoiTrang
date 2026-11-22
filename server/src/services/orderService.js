@@ -38,6 +38,10 @@ const generateWaybillCode = (carrier, maDon) => {
 
 const orderService = {
     async placeOrder(user, payload) {
+        if (!user || !user.id) {
+            throw new AppError('Vui lòng đăng nhập tài khoản trước khi đặt hàng.', 401);
+        }
+
         const hoTenNhan = payload.hoTenNhan || payload.tenNguoiNhan;
         const sdtNhan = payload.sdtNhan || payload.soDienThoaiNhan;
         const diaChiNhan = payload.diaChiNhan || payload.diaChiGiaoHang;
@@ -94,7 +98,7 @@ const orderService = {
                 const validated = await voucherModel.validateVoucher(conn, {
                     maCode: maVoucher,
                     tongTienHang,
-                    nguoiDungId: user ? user.id : null,
+                    nguoiDungId: user.id,
                     forUpdate: true
                 });
                 appliedCode = validated.voucher.MaCode;
@@ -105,7 +109,7 @@ const orderService = {
             const tongTien = Math.max(0, tongTienHang - soTienGiam);
 
             const donHangId = await orderModel.createOrder(conn, {
-                nguoiDungId: user ? user.id : null,
+                nguoiDungId: user.id,
                 hoTenNhan: hoTenNhan.trim(),
                 sdtNhan: sdtNhan.trim(),
                 emailNhan: rawEmail || null,

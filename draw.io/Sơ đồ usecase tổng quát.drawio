@@ -1,0 +1,150 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Trang-1" id="sOQOwS-1fbwRWiHjSkdf">
+    <mxGraphModel dx="3184" dy="2555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sys_boundary" parent="1" style="shape=rect;html=1;verticalAlign=top;fontStyle=1;fontSize=14;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;spacingTop=8;fontFamily=Times New Roman;" value="HỆ THỐNG WEBSITE THƯƠNG MẠI ĐIỆN TỬ KINH DOANH SẢN PHẨM THỜI TRANG" vertex="1">
+          <mxGeometry height="1100" width="655" x="220" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_guest" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=14;fontStyle=1;fontFamily=Times New Roman;" value="Khách chưa đăng nhập" vertex="1">
+          <mxGeometry height="80" width="40" x="75" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_customer" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=14;fontStyle=1;fontFamily=Times New Roman;" value="Khách hàng" vertex="1">
+          <mxGeometry height="80" width="40" x="75" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=14;fontStyle=1;fontFamily=Times New Roman;" value="Quản trị viên" vertex="1">
+          <mxGeometry height="80" width="40" x="975" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_inherit" edge="1" parent="1" style="endArrow=block;endFill=0;endSize=14;html=1;strokeWidth=1.2;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="actor_guest" value="">
+          <mxGeometry relative="1" width="160" x="-0.0671" as="geometry">
+            <Array as="points">
+              <mxPoint x="-20" y="561.67" />
+              <mxPoint x="-20" y="380" />
+              <mxPoint x="-20" y="205" />
+            </Array>
+            <mxPoint x="60" y="561.67" as="sourcePoint" />
+            <mxPoint x="95" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc_view_prod" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Times New Roman;fontStyle=1" value="Xem danh sách &amp;amp; chi tiết sản phẩm" vertex="1">
+          <mxGeometry height="46" width="205" x="370" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_search" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Times New Roman;fontStyle=1" value="Tìm kiếm, lọc &amp;amp; sắp xếp" vertex="1">
+          <mxGeometry height="46" width="205" x="410" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_cart" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Times New Roman;fontStyle=1" value="Quản lý giỏ hàng" vertex="1">
+          <mxGeometry height="46" width="205" x="430" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_track" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Times New Roman;fontStyle=1" value="Tra cứu đơn hàng &amp;amp; bản đồ" vertex="1">
+          <mxGeometry height="46" width="205" x="450" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_faq_ai" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Times New Roman;fontStyle=1" value="Xem FAQ &amp;amp; Hỏi trợ lý AI" vertex="1">
+          <mxGeometry height="46" width="205" x="425" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_register" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Times New Roman;fontStyle=1" value="Đăng ký tài khoản" vertex="1">
+          <mxGeometry height="46" width="205" x="290" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_login" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=Times New Roman;" value="Đăng nhập" vertex="1">
+          <mxGeometry height="46" width="150" x="520" y="366" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_order" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Times New Roman;fontStyle=1" value="Đặt hàng &amp;amp; thanh toán&#xa;(COD / VietQR)" vertex="1">
+          <mxGeometry height="50" width="205" x="320" y="748" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_check_stock" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;fontFamily=Times New Roman;fontStyle=1" value="Kiểm tra tồn kho biến thể" vertex="1">
+          <mxGeometry height="42" width="185" x="455" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_apply_voucher" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#f5f5f5;strokeColor=#666666;fontFamily=Times New Roman;fontStyle=1" value="Áp dụng mã giảm giá" vertex="1">
+          <mxGeometry height="42" width="185" x="240" y="926" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_profile" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Times New Roman;fontStyle=1" value="Quản lý hồ sơ cá nhân" vertex="1">
+          <mxGeometry height="46" width="205" x="360" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_refund" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Times New Roman;fontStyle=1" value="Lịch sử đơn &amp;amp; Yêu cầu hoàn tiền" vertex="1">
+          <mxGeometry height="46" width="205" x="360" y="552" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_review" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Times New Roman;fontStyle=1" value="Đánh giá sản phẩm" vertex="1">
+          <mxGeometry height="46" width="205" x="340" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_ad_cat" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Times New Roman;fontStyle=1" value="Quản lý danh mục" vertex="1">
+          <mxGeometry height="46" width="205" x="590" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_ad_prod" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Times New Roman;fontStyle=1" value="Quản lý sản phẩm &amp;amp; biến thể SKU" vertex="1">
+          <mxGeometry height="46" width="205" x="580" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_ad_order" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Times New Roman;fontStyle=1" value="Quản lý đơn hàng &amp;amp; hoàn tiền" vertex="1">
+          <mxGeometry height="46" width="205" x="540" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_ad_email" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Times New Roman;fontStyle=1" value="Gửi hóa đơn qua email" vertex="1">
+          <mxGeometry height="46" width="205" x="580" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_ad_content" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Times New Roman;fontStyle=1" value="Quản lý voucher, đánh giá &amp;amp; FAQ" vertex="1">
+          <mxGeometry height="46" width="205" x="590" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_ad_stats" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Times New Roman;fontStyle=1" value="Xem thống kê doanh thu" vertex="1">
+          <mxGeometry height="46" width="205" x="660" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g1" edge="1" parent="1" source="actor_guest" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_view_prod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g2" edge="1" parent="1" source="actor_guest" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_search">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g3" edge="1" parent="1" source="actor_guest" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_cart">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g4" edge="1" parent="1" source="actor_guest" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g5" edge="1" parent="1" source="actor_guest" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_faq_ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_g6" edge="1" parent="1" source="actor_guest" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_register">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_inc_stock" edge="1" parent="1" source="uc_order" style="dashed=1;endArrow=open;endSize=12;html=1;fontSize=14;verticalAlign=bottom;fontFamily=Times New Roman;fontStyle=1" target="uc_check_stock" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ext_voucher" edge="1" parent="1" source="uc_apply_voucher" style="dashed=1;endArrow=open;endSize=12;html=1;fontSize=14;verticalAlign=top;fontFamily=Times New Roman;fontStyle=1" target="uc_order" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_login" edge="1" parent="1" source="actor_customer" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_order" edge="1" parent="1" source="actor_customer" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_order">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_prof" edge="1" parent="1" source="actor_customer" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_profile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_ref" edge="1" parent="1" source="actor_customer" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_refund">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_c_rev" edge="1" parent="1" source="actor_customer" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_review">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a_login" edge="1" parent="1" source="actor_admin" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a_cat" edge="1" parent="1" source="actor_admin" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_ad_cat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a_prod" edge="1" parent="1" source="actor_admin" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_ad_prod">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a_ord" edge="1" parent="1" source="actor_admin" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_ad_order">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a_mail" edge="1" parent="1" source="actor_admin" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_ad_email">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a_cont" edge="1" parent="1" source="actor_admin" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_ad_content">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a_stat" edge="1" parent="1" source="actor_admin" style="endArrow=none;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="uc_ad_stats">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

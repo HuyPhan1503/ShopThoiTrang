@@ -31,11 +31,24 @@ const Checkout = () => {
     const [createdOrder, setCreatedOrder] = useState(null);
 
     useEffect(() => {
+        if (user) {
+            setHoTenNhan((prev) => prev || user.HoTen || '');
+            setSdtNhan((prev) => prev || user.SoDienThoai || '');
+            setEmailNhan((prev) => prev || user.Email || '');
+        }
+    }, [user]);
+
+    useEffect(() => {
         voucherService
             .getPublicVouchers()
             .then((res) => setPublicVouchers(res.data || []))
             .catch(() => {});
     }, []);
+
+    // Bắt buộc đăng nhập mới được truy cập trang thanh toán
+    if (!isAuthenticated) {
+        return <Navigate to="/login" state={{ from: '/checkout' }} replace />;
+    }
 
     if (cartItems.length === 0 && !createdOrder) {
         return <Navigate to="/cart" replace />;
@@ -175,15 +188,9 @@ const Checkout = () => {
                 {createdOrder.vietQr && <VietQrBox vietQr={createdOrder.vietQr} />}
 
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap', marginTop: '22px' }}>
-                    {isAuthenticated ? (
-                        <Link to={`/orders/${createdOrder.DonHangId}`} className="btn btn-primary">
-                            Xem chi tiết đơn hàng
-                        </Link>
-                    ) : (
-                        <Link to="/tra-cuu-don" className="btn btn-primary">
-                            Tra cứu đơn hàng
-                        </Link>
-                    )}
+                    <Link to={`/orders/${createdOrder.DonHangId}`} className="btn btn-primary">
+                        Xem chi tiết đơn hàng
+                    </Link>
                     <Link to="/products" className="btn btn-outline">
                         Tiếp tục mua sắm
                     </Link>

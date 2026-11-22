@@ -1,10 +1,15 @@
 const orderService = require('../services/orderService');
 const orderAutomationService = require('../services/orderAutomationService');
 const asyncHandler = require('../utils/asyncHandler');
+const AppError = require('../utils/AppError');
 
 const orderController = {
     placeOrder: asyncHandler(async (req, res) => {
-        const order = await orderService.placeOrder(req.user || null, req.body);
+        if (!req.user || !req.user.id) {
+            throw new AppError('Vui lòng đăng nhập tài khoản trước khi đặt hàng.', 401);
+        }
+
+        const order = await orderService.placeOrder(req.user, req.body);
         res.status(201).json({
             success: true,
             message: order.autoConfirmed

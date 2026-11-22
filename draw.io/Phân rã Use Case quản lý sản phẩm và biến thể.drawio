@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Trang-1" id="Cfa79bgVAol38HDqWHz7">
+    <mxGraphModel dx="1217" dy="808" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="b" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontFamily=Times New Roman;fontSize=14;fontStyle=1;fillColor=none;strokeColor=#333333;strokeWidth=2;spacingTop=8;" value="Phân rã Use Case Quản lý sản phẩm và biến thể" vertex="1">
+          <mxGeometry height="560" width="760" x="180" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="adm" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Times New Roman;fontSize=14;fontStyle=1;strokeWidth=2;" value="Quản trị viên" vertex="1">
+          <mxGeometry height="80" width="40" x="60" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ad03" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" value="AD03: Quản lý sản phẩm&lt;br&gt;và biến thể SKU" vertex="1">
+          <mxGeometry height="95" width="230" x="370" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ad031" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="AD03.1: Quản lý thông tin&lt;br&gt;chung sản phẩm" vertex="1">
+          <mxGeometry height="80" width="220" x="700" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ad032" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="AD03.2: Quản lý biến thể&lt;br&gt;kích cỡ – màu sắc" vertex="1">
+          <mxGeometry height="80" width="220" x="700" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ad033" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="AD03.3: Ngừng kinh doanh&lt;br&gt;(xóa mềm) sản phẩm" vertex="1">
+          <mxGeometry height="80" width="220" x="285" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="ad034" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="AD03.4: Cảnh báo biến thể&lt;br&gt;sắp hết hàng" vertex="1">
+          <mxGeometry height="80" width="220" x="565" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="adm" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;fontFamily=Times New Roman;fontSize=14;fontStyle=1" target="ad03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i1" edge="1" parent="1" source="ad03" style="endArrow=open;endSize=10;endFill=0;dashed=1;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=3;strokeColor=#333333;labelBackgroundColor=#ffffff;" target="ad031" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i2" edge="1" parent="1" source="ad03" style="endArrow=open;endSize=10;endFill=0;dashed=1;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=3;strokeColor=#333333;labelBackgroundColor=#ffffff;" target="ad032" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x1" edge="1" parent="1" source="ad033" style="endArrow=open;endSize=10;endFill=0;dashed=1;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=3;strokeColor=#333333;labelBackgroundColor=#ffffff;" target="ad03" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x2" edge="1" parent="1" source="ad034" style="endArrow=open;endSize=10;endFill=0;dashed=1;html=1;fontFamily=Times New Roman;fontSize=14;fontStyle=3;strokeColor=#333333;labelBackgroundColor=#ffffff;" target="ad03" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

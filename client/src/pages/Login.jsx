@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+    const redirectTo = location.state?.from || '/';
 
     const [email, setEmail] = useState('');
     const [matKhau, setMatKhau] = useState('');
@@ -18,9 +20,9 @@ const Login = () => {
         try {
             const user = await login(email, matKhau);
             if (user.VaiTro === 'ADMIN') {
-                navigate('/admin');
+                navigate('/admin', { replace: true });
             } else {
-                navigate('/');
+                navigate(redirectTo, { replace: true });
             }
         } catch (err) {
             setError(err.message);
@@ -35,6 +37,23 @@ const Login = () => {
             <p style={{ color: 'var(--text-muted)', fontSize: '14px', textAlign: 'center', marginBottom: '20px' }}>
                 Chào mừng bạn quay lại ShopThoiTrang
             </p>
+
+            {location.state?.from === '/checkout' && !error && (
+                <div
+                    style={{
+                        padding: '10px 12px',
+                        marginBottom: '16px',
+                        borderRadius: '6px',
+                        backgroundColor: '#eff6ff',
+                        border: '1px solid #bfdbfe',
+                        color: '#1e40af',
+                        fontSize: '13px',
+                        textAlign: 'center'
+                    }}
+                >
+                    Vui lòng đăng nhập để tiếp tục hoàn tất đơn hàng của bạn.
+                </div>
+            )}
 
             {error && <div className="alert alert-error">{error}</div>}
 
@@ -70,7 +89,7 @@ const Login = () => {
 
             <p style={{ textAlign: 'center', marginTop: '16px', fontSize: '14px', color: 'var(--text-muted)' }}>
                 Chưa có tài khoản?{' '}
-                <Link to="/register" style={{ color: 'var(--accent)', fontWeight: 600 }}>
+                <Link to="/register" state={location.state} style={{ color: 'var(--accent)', fontWeight: 600 }}>
                     Đăng ký ngay
                 </Link>
             </p>

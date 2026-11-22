@@ -17,7 +17,7 @@ const verifyToken = (req, res, next) => {
     }
 };
 
-// Dùng cho các chức năng hỗ trợ cả khách vãng lai lẫn thành viên (ví dụ: Đặt hàng)
+// Xác thực tùy chọn (không dùng cho chức năng đặt hàng vì đặt hàng bắt buộc đăng nhập)
 const optionalAuth = (req, res, next) => {
     const authHeader = req.headers.authorization;
     if (authHeader && authHeader.startsWith('Bearer ')) {
